@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "custom-directive"
+    }
+  },
+  "defaultProject": "custom-directive",
+  "cli": {
+    "analytics": false
+  }
 }
