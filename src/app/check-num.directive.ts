@@ -18,10 +18,10 @@ export class CheckNumDirective {
 
   @HostListener('keyup') onkeyup() {
     if (this.ref.nativeElement.value < 0 || this.ref.nativeElement.value > 5) {
-      this.ref.nativeElement.style.backgroundColor = 'red';
+      this.ref.nativeElement.style.border = '3px solid red';
       this.holdTime.emit('invalid');
     } else {
-      this.ref.nativeElement.style.backgroundColor = 'green';
+      this.ref.nativeElement.style.border = '3px solid green';
       this.holdTime.emit('valid');
     }
   }
@@ -32,10 +32,12 @@ export class CheckNumDirective {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
+    this.ref.nativeElement.style.boxShadow = '5px 5px 20px rgba(0,0,0,.2)';
     this.highlightColor('red');
   }
   
   @HostListener('mouseleave') onMouseLeave() {
+    this.ref.nativeElement.style.boxShadow = 'none';
     this.highlightColor('#495057');
 
   }
