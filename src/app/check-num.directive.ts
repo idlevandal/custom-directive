@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Host, HostListener, Input, Output, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[checkNum]'
@@ -16,7 +16,8 @@ export class CheckNumDirective {
     this.ref.nativeElement.value = this.defaultValue;
   }
 
-  @HostListener('keyup') onkeyup() {
+  @HostListener('keyup')
+  public onkeyup() {
     if (this.ref.nativeElement.value < 0 || this.ref.nativeElement.value > 5) {
       // this.ref.nativeElement.style.border = '3px solid red';
       this.renderer.setStyle(this.ref.nativeElement, 'border', '3px solid red');
@@ -29,19 +30,28 @@ export class CheckNumDirective {
   }
   
   // capture the $event and pass it to the function
-  @HostListener('wheel', ['$event']) onWheel($event: WheelEvent) {
-    console.log($event.deltaY);
+  @HostListener('wheel', ['$event'])
+  public onWheel(ev: WheelEvent) {
+    console.log(ev.deltaY);
   }
 
-  @HostListener('mouseenter') onMouseEnter() {
+  @HostListener('mouseenter')
+  public onMouseEnter() {
     this.ref.nativeElement.style.boxShadow = '5px 5px 20px rgba(0,0,0,.2)';
     this.highlightColor('red');
   }
   
-  @HostListener('mouseleave') onMouseLeave() {
+  @HostListener('mouseleave')
+  public onMouseLeave() {
     this.ref.nativeElement.style.boxShadow = 'none';
     this.highlightColor('#495057');
 
+  }
+
+  @HostListener('paste', ['$event'])
+  public onPaste(ev: ClipboardEvent) {
+    console.log(ev.clipboardData);
+    console.log(ev.clipboardData.getData('Text'));
   }
 
   private highlightColor(color: string): void {
