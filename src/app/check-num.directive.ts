@@ -7,6 +7,8 @@ export class CheckNumDirective {
 
   constructor(private ref: ElementRef) { }
 
+  // TO USE: on the DOM element (holdTime)="logStatus($event)"
+  // in Directive: this.holdTime.emit(val)
   @Output() holdTime: EventEmitter<string> = new EventEmitter();
   @Input() defaultValue;
 
