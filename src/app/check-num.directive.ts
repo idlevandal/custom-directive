@@ -12,6 +12,8 @@ export class CheckNumDirective {
   @Output() holdTime: EventEmitter<string> = new EventEmitter();
   @Input() defaultValue;
 
+  private elementSelected = false;
+
   ngOnInit(): void {
     this.ref.nativeElement.value = this.defaultValue;
   }
@@ -52,6 +54,16 @@ export class CheckNumDirective {
   public onPaste(ev: ClipboardEvent) {
     console.log(ev.clipboardData);
     console.log(ev.clipboardData.getData('Text'));
+  }
+
+  @HostListener('click')
+  public onClick() {
+    this.elementSelected = !this.elementSelected;
+    if (this.elementSelected) {
+      this.ref.nativeElement.classList.add('toggle')
+    } else {
+      this.ref.nativeElement.classList.remove('toggle')
+    }
   }
 
   private highlightColor(color: string): void {
