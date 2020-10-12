@@ -1,11 +1,11 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[checkNum]'
 })
 export class CheckNumDirective {
 
-  constructor(private ref: ElementRef) { }
+  constructor(private ref: ElementRef, private renderer: Renderer2) { }
 
   // TO USE: on the DOM element (holdTime)="logStatus($event)"
   // in Directive: this.holdTime.emit(val)
@@ -18,10 +18,12 @@ export class CheckNumDirective {
 
   @HostListener('keyup') onkeyup() {
     if (this.ref.nativeElement.value < 0 || this.ref.nativeElement.value > 5) {
-      this.ref.nativeElement.style.border = '3px solid red';
+      // this.ref.nativeElement.style.border = '3px solid red';
+      this.renderer.setStyle(this.ref.nativeElement, 'border', '3px solid red');
       this.holdTime.emit('invalid');
     } else {
-      this.ref.nativeElement.style.border = '3px solid green';
+      // this.ref.nativeElement.style.border = '3px solid green';
+      this.renderer.setStyle(this.ref.nativeElement, 'border', '3px solid green');
       this.holdTime.emit('valid');
     }
   }
