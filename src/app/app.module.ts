@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CheckNumDirective } from './check-num.directive';
+import { TooltipDirective } from './tooltip.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CheckNumDirective
+    CheckNumDirective,
+    TooltipDirective
   ],
   imports: [
     BrowserModule

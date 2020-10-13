@@ -1,6 +1,11 @@
-<div class="container mt-5">
-  <h4 class="m-4">Test Bed</h4>
-  <div class="form-group col-3">
-    <input class="form-control" checkNum [defaultValue]='num' (holdTime)="logStatus($event)" type="text">
+<div>
+  <div class="container mt-5">
+    <h4 ttToolTip toolTip="Tip on h4 element" class="m-4">Test Bed</h4>
+    <div class="form-group col-3">
+      <input class="form-control" checkNum [defaultValue]='num' (holdTime)="logStatus($event)" type="text">
+    </div>
   </div>
 </div>
+
+ 
+<button ttToolTip toolTip="Tip of the day">Show Tip</button>

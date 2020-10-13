@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+.test {
+  display: inline-block;
+  border-bottom: 1px dotted #666;
+  position: absolute;
+}
+
+.tool-tip {
+  display: inline-block;
+  border: 1px solid #666;
+  position: absolute;
+  background-color: #f8f8f8;
+  padding: 5px 8px;
+  z-index: 10;
+  border-radius: 4px;
+}
