@@ -8,10 +8,12 @@
 
 .tool-tip {
   display: inline-block;
-  border: 1px solid #666;
   position: absolute;
-  background-color: #f8f8f8;
+  background-color: lightblue;
+  color: darkblue;
+  font-weight: bold;
   padding: 5px 8px;
-  z-index: 10;
+  border: 2px solid cornflowerblue;
   border-radius: 4px;
+  z-index: 10;
 }

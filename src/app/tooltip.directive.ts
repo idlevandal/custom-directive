@@ -44,7 +44,7 @@ export class TooltipDirective {
     let hostPos = this.elementRef.nativeElement.getBoundingClientRect();
     let tooltipPos= this.elToolTip.getBoundingClientRect();
  
-    let top = hostPos.bottom+10;
+    let top = hostPos.bottom + 4;
     let left = hostPos.left;
  
     this.renderer.setStyle(this.elToolTip, 'top', `${top}px`);
