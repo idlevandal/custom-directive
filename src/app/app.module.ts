@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CheckNumDirective } from './check-num.directive';
 import { TooltipDirective } from './tooltip.directive';
+import { ElasticInputDirective } from './elastic-input.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckNumDirective,
-    TooltipDirective
+    TooltipDirective,
+    ElasticInputDirective
   ],
   imports: [
     BrowserModule
