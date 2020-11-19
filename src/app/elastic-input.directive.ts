@@ -14,6 +14,8 @@ import {
 export class ElasticInputDirective implements OnInit, AfterViewChecked {
   dummyEl: HTMLElement;
 
+  // https://medium.com/lapis/searching-through-a-list-reactively-in-angular-c61c9d1832df
+
   @HostListener('input', ['$event.target'])
   onInput(e): void {
     this.update();
