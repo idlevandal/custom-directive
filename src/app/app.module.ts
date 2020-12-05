@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CheckNumDirective } from './check-num.directive';
 import { TooltipDirective } from './tooltip.directive';
 import { ElasticInputDirective } from './elastic-input.directive';
+import { RainbowDirective } from './rainbow.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckNumDirective,
     TooltipDirective,
-    ElasticInputDirective
+    ElasticInputDirective,
+    RainbowDirective
   ],
   imports: [
     BrowserModule
